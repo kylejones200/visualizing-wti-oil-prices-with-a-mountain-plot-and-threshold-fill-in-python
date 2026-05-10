@@ -1,45 +1,33 @@
+---
+author: "Kyle Jones"
+date_published: "August 11, 2025"
+date_exported_from_medium: "November 10, 2025"
+canonical_link: "https://medium.com/@kyle-t-jones/visualizing-wti-oil-prices-with-a-mountain-plot-and-threshold-fill-in-python-e213a7391498"
+---
+
 # Visualizing WTI Oil Prices with a "Mountain Plot" and Threshold Fill in Python
 
-Most oil price charts are a single line which can be useful, but lacks
-context. In the oil market, specific price levels carry operational...
+Most oil price charts are a single line which can be useful, but lacks context. In the oil market, specific price levels carry operational...
 
-::::### Visualizing WTI Oil Prices with a "Mountain Plot" and Threshold Fill in Python 
+### Visualizing WTI Oil Prices with a "Mountain Plot" and Threshold Fill in Python 
 
-Most oil price charts are a single line which can be useful, but lacks
-context. In the oil market, specific price levels carry operational
-meaning --- especially for producers.
+Most oil price charts are a single line which can be useful, but lacks context. In the oil market, specific price levels carry operational meaning --- especially for producers.
 
-In this project, I wanted to visualize WTI crude oil prices in a way
-that tells more of the story. The result is a "mountain plot" that fills
-the area above and below meaningful thresholds in different colors. It
-animates over time so you can watch the market move through cycles of
-profitability and pressure.
+In this project, I wanted to visualize WTI crude oil prices in a way that tells more of the story. The result is a "mountain plot" that fills the area above and below meaningful thresholds in different colors. It animates over time so you can watch the market move through cycles of profitability and pressure.
 
 ### Why These Two Price Levels Matter
-I chose two reference lines for this visualization. **\$70/bbl (solid
-line)** is often cited as the break-even point for US shale production.
-When WTI is above this level, many shale projects are profitable, and
-drilling tends to accelerate. \$50/bbl (dashed line) is a rough global
-average break-even for conventional production. Below this point,
-pressure is felt industry-wide.
+I chose two reference lines for this visualization. **\$70/bbl (solid line)** is often cited as the break-even point for US shale production. When WTI is above this level, many shale projects are profitable, and drilling tends to accelerate. \$50/bbl (dashed line) is a rough global average break-even for conventional production. Below this point, pressure is felt industry-wide.
 
-By shading green above \$70 and red below, the plot instantly shows when
-prices are in "comfort" or "stress" territory for US shale.
+By shading green above \$70 and red below, the plot instantly shows when prices are in "comfort" or "stress" territory for US shale.
 
 ### The Finished Chart
-The animation below uses WTI data from Yahoo Finance
-(`CL=F`), downsampled to keep file size
-small and performance fast.
+The animation below uses WTI data from Yahoo Finance (`CL=F`), downsampled to keep file size small and performance fast.
 
-You can see the long stretches in the red zone during the 2014--2016
-price collapse and the 2020 pandemic shock, as well as the extended
-green period since the post-2021 rebound.
+You can see the long stretches in the red zone during the 2014--2016 price collapse and the 2020 pandemic shock, as well as the extended green period since the post-2021 rebound.
 
 
 ### The Code
-This notebook-friendly Python code will fetch WTI data from Yahoo
-Finance, create the mountain plot with Matplotlib, and stream frames to
-disk to avoid memory problems.
+This notebook-friendly Python code will fetch WTI data from Yahoo Finance, create the mountain plot with Matplotlib, and stream frames to disk to avoid memory problems.
 
 ```python
 # %pip install yfinance imageio --quiet
@@ -137,19 +125,4 @@ print(f"Wrote {out_png} and {out_gif}")
 ```
 
 ### What This Adds to the Analysis
-Beyond aesthetics, this type of plot gives decision-makers a faster way
-to connect price history with operational thresholds. It becomes obvious
-when the market was in "comfort" vs. "stress" zones and for how long.
-That's useful for producers gauging when to accelerate or slow drilling,
-investors assessing cyclicality and capital discipline, and analysts
-framing discussions of supply response to price changes.
-::::If you try this code, experiment with different thresholds for other
-commodities, or even for entirely different markets --- such as
-electricity, gas, or metals --- where profitability zones matter.
-::::::::::::By [Kyle Jones](https://medium.com/@kyle-t-jones) on
-[August 11, 2025](https://medium.com/p/e213a7391498).
-
-[Canonical
-link](https://medium.com/@kyle-t-jones/visualizing-wti-oil-prices-with-a-mountain-plot-and-threshold-fill-in-python-e213a7391498)
-
-Exported from [Medium](https://medium.com) on November 10, 2025.
+Beyond aesthetics, this type of plot gives decision-makers a faster way to connect price history with operational thresholds. It becomes obvious when the market was in "comfort" vs. "stress" zones and for how long. That's useful for producers gauging when to accelerate or slow drilling, investors assessing cyclicality and capital discipline, and analysts framing discussions of supply response to price changes. If you try this code, experiment with different thresholds for other commodities, or even for entirely different markets --- such as electricity, gas, or metals --- where profitability zones matter.
